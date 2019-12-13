@@ -249,7 +249,7 @@ class EloquentJoinBuilder extends Builder
             if ($scope instanceof SoftDeletingScope) {
                 $this->applyClauseOnRelation($join, 'withoutTrashed', [], $relatedTableAlias);
             } else {
-                throw new InvalidRelationGlobalScope();
+//                throw new InvalidRelationGlobalScope();
             }
         }
     }
@@ -269,7 +269,7 @@ class EloquentJoinBuilder extends Builder
 
                 call_user_func_array([$join, $method], $params);
             } catch (\Exception $e) {
-                throw new InvalidRelationWhere();
+//                throw new InvalidRelationWhere();
             }
         } elseif (in_array($method, ['withoutTrashed', 'onlyTrashed', 'withTrashed'])) {
             if ('withTrashed' == $method) {
